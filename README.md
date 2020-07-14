@@ -35,6 +35,12 @@ All options:
 - addYear
 - addYears
 
+Todo:
+hour(s), minute(s), second(s), etc.
+subYear, sub...
+diffIn.../compare/between/...
+format/set/parse/...
+
 [npm-url]: https://www.npmjs.com/package/@hckrnews/date
 [npm-image]: https://img.shields.io/npm/v/@hckrnews/date.svg
 [travis-url]: https://travis-ci.org/hckrnews/date
