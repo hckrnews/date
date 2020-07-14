@@ -1,0 +1,50 @@
+{
+    "name": "@hckrnews/date",
+    "version": "0.1.0",
+    "description": "Date with fun",
+    "main": "src/date.js",
+    "files": [
+        "src/date.js"
+    ],
+    "type": "module",
+    "license": "LGPL-2.1",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint .",
+        "coveralls": "jest && codecov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    },
+    "author": {
+        "name": "Pieter Wigboldus",
+        "url": "https://hckr.news/"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.5",
+        "@babel/preset-env": "^7.10.4",
+        "@hckrnews/eslint-config": "^1.0.0",
+        "babel-eslint": "^10.1.0",
+        "codecov": "^3.6.5",
+        "coveralls": "^3.0.13",
+        "eslint": "^7.4.0",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-html": "^6.0.2",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.3",
+        "eslint-plugin-react": "^7.20.3",
+        "eslint-plugin-vue": "^6.2.2",
+        "jest": "^26.1.0",
+        "prettier": "2.0.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hckrnews/date"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "keywords": [
+        "date",
+        "dates"
+    ]
+}
