@@ -1,4 +1,3 @@
-import Parse from './parse';
 import { options } from './parts';
 
 /**
@@ -57,7 +56,7 @@ class HckrDate extends Date {
         return this;
     }
 
-    static create(rawDate, format = 'd-m-Y H:i:s') {
+    static create(rawDate, format) {
         const regex = Object.entries(options).reduce(
             (tempValue, [key, value]) => tempValue.replace(key, value.regex),
             format
@@ -67,7 +66,7 @@ class HckrDate extends Date {
             .split('')
             .filter((char) => options.hasOwnProperty(char));
 
-        const dateParts = rawDate.match(new Parse(regex));
+        const dateParts = rawDate.match(new RegExp(regex));
 
         const newDate = new HckrDate('1970-01-01 00:00:00');
 
