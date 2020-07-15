@@ -1,3 +1,6 @@
+import Parse from './parse';
+import { options } from './parts';
+
 /**
  * Date
  */
@@ -52,6 +55,31 @@ class HckrDate extends Date {
         this.setFullYear(currentYear);
 
         return this;
+    }
+
+    static create(rawDate, format = 'd-m-Y H:i:s') {
+        const regex = Object.entries(options).reduce(
+            (tempValue, [key, value]) => tempValue.replace(key, value.regex),
+            format
+        );
+
+        const formatParts = format
+            .split('')
+            .filter((char) => options.hasOwnProperty(char));
+
+        const dateParts = rawDate.match(new Parse(regex));
+
+        const newDate = new HckrDate('1970-01-01 00:00:00');
+
+        return formatParts.reduce((tempValue, part, index) => {
+            const option = options[part];
+            const { setter, correction } = option;
+            const newValue = parseInt(dateParts[index + 1], 10) - correction;
+
+            tempValue[setter](newValue);
+
+            return tempValue;
+        }, newDate);
     }
 }
 
